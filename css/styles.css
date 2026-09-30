@@ -1,0 +1,312 @@
+/* PLUMBING_V 1 — reset tecnico canonico (Toolkit/boilerplate/plumbing.css) */
+[hidden] { display: none !important; }
+img { max-width: 100%; height: auto; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+/* ══════════ DITO DIVINO — Via Gaetano Negri 8 ══════════
+   «…si versava un "Dito Divino" a tutti gli ospiti» (dal loro sito). Il wine bar rosso a due passi da Piazza Affari: le pareti
+   imbottite di damasco, il soffitto blu, le lampade a coppa ambra, le insegne nere con «Dito» in corsivo bianco e «DiVINO» in rosso, le
+   scritte oro sulle vetrine. La firma è un dito di vino (_ddv_firma.mjs). */
+:root {
+  --damasco: #7A1427;
+  --damasco-scuro: #4E0B18;
+  --damasco-rilievo: #8C1A30;
+  --rosso: #D2263B;
+  --rosso-chiaro: #EC5A6C;
+  --nero: #151213;
+  --nero-2: #241D1F;
+  --oro: #C9A456;
+  --oro-chiaro: #E6C77E;
+  --oro-testo: #7A5E1E;
+  --blu: #1E2B4D;
+  --blu-trama: #2A3A63;
+  --ambra: #F0A43A;
+  --crema: #F6EFE4;
+  --crema-2: #EADFCF;
+  --pietra: #E9E4DC;
+  --pietra-scura: #CFC7BB;
+  --inchiostro: #231A1C;
+  --grigio: #5A4E50;
+  --chiaro: #F3E8E1;
+  --aperto: #3CC47C;
+  --f-nome: 'Engagement', 'Brush Script MT', cursive;
+  --f-titoli: 'Virgolette', 'Quando', Georgia, serif;
+  --f-testo: 'Hind Guntur', 'Segoe UI', Arial, sans-serif;
+  --gutter: 16px;
+  --testata-h: 70px;
+  /* il damasco: lo stesso disegno della firma, in piccolo */
+  --damasco-trama: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='92'%3E%3Cpath d='M35 8 C 44 20, 52 30, 52 46 C 52 62, 44 72, 35 84 C 26 72, 18 62, 18 46 C 18 30, 26 20, 35 8 Z M35 26 C 40 34, 42 40, 42 46 C 42 52, 40 58, 35 66 C 30 58, 28 52, 28 46 C 28 40, 30 34, 35 26 Z' fill='%238C1A30' fill-rule='evenodd'/%3E%3Cpath d='M0 0 L 8 12 L 0 24 Z M70 0 L 62 12 L 70 24 Z M0 68 L 8 80 L 0 92 Z M70 68 L 62 80 L 70 92 Z' fill='%23861729'/%3E%3C/svg%3E");
+  --blu-trama-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Cpath d='M28 6 C 34 14, 40 20, 40 28 C 40 36, 34 42, 28 50 C 22 42, 16 36, 16 28 C 16 20, 22 14, 28 6 Z' fill='none' stroke='%232A3A63' stroke-width='2'/%3E%3C/svg%3E");
+}
+@media (min-width: 760px) { :root { --gutter: 24px; } }
+/* le virgolette di Quando sembrano due «minore di»: « e » da un serif di sistema, il resto resta Quando */
+@font-face { font-family: 'Virgolette'; src: local('Georgia'), local('Noto Serif'), local('DejaVu Serif'), local('Times New Roman'); unicode-range: U+00AB, U+00BB; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; color: var(--inchiostro); font: 400 1.08rem/1.62 var(--f-testo); background: var(--crema); }
+a { color: var(--damasco); }
+b, strong { font-weight: 700; }
+.salta { position: absolute; left: 12px; top: -60px; z-index: 100; padding: 10px 16px; background: #fff; color: #111; font-weight: 700; text-decoration: none; }
+.salta:focus { top: 10px; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+section[id] { scroll-margin-top: calc(var(--testata-h) + 14px); }
+.intero { white-space: nowrap; }
+:focus-visible { outline: 3px solid var(--ambra); outline-offset: 2px; }
+/* finché i caratteri non arrivano il ripiego è più largo: una parola lunga va a capo invece di uscire (riserva-check, #233) */
+h1, h2, h3, .vetrina__nome { overflow-wrap: anywhere; }
+
+/* ── il marchio: come le insegne nere, «Dito» in corsivo bianco e «DiVINO» in rosso ── */
+.marchio { display: inline-flex; align-items: baseline; gap: 8px; min-width: 0; color: #FFFFFF; text-decoration: none; }
+.marchio__dito { font: 400 2.5rem/.9 var(--f-nome); color: #FFFFFF; }
+.marchio__divino { font: 400 1.5rem/1 var(--f-titoli); letter-spacing: .04em; color: var(--rosso-chiaro); }
+
+/* ── la testata: l'insegna nera col filo oro ── */
+.testata { position: sticky; top: 0; z-index: 50; background: var(--nero); box-shadow: 0 2px 0 var(--oro), 0 10px 18px -12px rgba(0, 0, 0, .7); }
+.testata__dentro { display: flex; align-items: center; gap: 10px; max-width: 1280px; margin: 0 auto; padding: 8px var(--gutter); min-height: 70px; }
+.voci { display: none; }
+.testata__azioni { margin-left: auto; display: flex; align-items: center; gap: 6px; flex: none; }
+.lingue { display: flex; }
+.lingue button { min-width: 34px; min-height: 38px; padding: 3px 5px 0; border: 1px solid var(--oro); background: transparent; color: var(--chiaro); font: 600 .9rem var(--f-testo); cursor: pointer; }
+.lingue button + button { border-left: 0; }
+.lingue button.is-on { background: var(--oro); color: var(--nero); }
+.chiama { display: none; align-items: center; min-height: 40px; padding: 3px 18px 0; border-radius: 20px; background: var(--rosso); color: #FFFFFF; font: 700 .96rem var(--f-testo); text-decoration: none; }
+.chiama:hover { background: var(--damasco); }
+.burger { display: inline-flex; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 10px; border: 1px solid var(--oro); background: transparent; cursor: pointer; }
+.burger span { display: block; height: 2px; background: var(--chiaro); transition: transform .2s, opacity .2s; }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.menu-mobile { position: fixed; top: var(--testata-h); left: 0; right: 0; z-index: 49; max-height: calc(100vh - var(--testata-h)); overflow-y: auto; padding: 10px var(--gutter) 22px; background: var(--nero); box-shadow: 0 12px 24px rgba(0, 0, 0, .4); }
+.menu-mobile a { display: block; padding: 12px 2px 10px; border-bottom: 1px solid rgba(201, 164, 86, .35); color: var(--chiaro); font: 400 1.2rem/1.35 var(--f-titoli); text-decoration: none; }
+.menu-mobile__tel { display: flex !important; justify-content: center; gap: 8px; margin-top: 14px; border: 0 !important; border-radius: 26px; background: var(--rosso); color: #FFFFFF !important; font: 700 1.08rem/1.3 var(--f-testo) !important; padding: 14px 8px 11px !important; }
+
+/* ── l'apertura: il damasco rosso; la firma nella cornice nera ── */
+.apertura { display: grid; gap: 34px; padding: 42px max(var(--gutter), calc((100% - 1240px) / 2)) 60px; background: var(--damasco) var(--damasco-trama); color: #FFFFFF; }
+.apertura__sopra { margin: 0 0 16px; font: 600 1rem/1.45 var(--f-testo); color: var(--oro-chiaro); }
+.titolo { margin: 0 0 16px; font: 400 clamp(2.05rem, 1.2rem + 3.3vw, 3.7rem)/1.18 var(--f-titoli); color: #FFFFFF; text-wrap: balance; }
+.apertura__seconda { margin: 0 0 16px; font: 400 clamp(1.15rem, 1rem + .6vw, 1.45rem)/1.35 var(--f-titoli); color: var(--oro-chiaro); }
+.apertura__frase { max-width: 32em; margin: 0 0 22px; font-size: 1.12rem; }
+.voto { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; margin: 0; }
+.voto__n { font: 400 2.5rem/1.1 var(--f-titoli); }
+.voto__su { font-size: 1.04rem; }
+.voto--sezione { margin: -6px 0 28px; }
+.citazione { max-width: 28em; margin: 16px 0 0; padding: 2px 0 0 16px; border-left: 2px solid var(--oro); }
+.citazione p { margin: 0; font: 400 1.16rem/1.45 var(--f-titoli); }
+.citazione footer { margin-top: 4px; font-size: .96rem; color: var(--chiaro); }
+.stato { display: inline-flex; align-items: center; gap: 8px; margin: 18px 0 0; font: 600 1.02rem/1.4 var(--f-testo); }
+.stato::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: currentColor; opacity: .5; flex: none; }
+.stato.is-aperto::before { opacity: 1; background: var(--aperto); box-shadow: 0 0 0 3px rgba(60, 196, 124, .3); }
+.apertura__azioni { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.bottone { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 4px 26px 0; border: 2px solid var(--damasco); border-radius: 4px; background: transparent; color: var(--damasco); font: 700 1.05rem/1.1 var(--f-testo); text-align: center; text-decoration: none; cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
+.bottone--pieno { background: var(--damasco); color: #FFFFFF; }
+.bottone--pieno:hover { background: var(--nero); border-color: var(--nero); }
+.bottone--vuoto:hover { background: var(--damasco); color: #FFFFFF; }
+.apertura .bottone { border-color: var(--oro); }
+.apertura .bottone--pieno { background: var(--oro); color: var(--nero); }
+.apertura .bottone--pieno:hover { background: #FFFFFF; border-color: #FFFFFF; }
+.apertura .bottone--vuoto { color: #FFFFFF; }
+.apertura .bottone--vuoto:hover { background: var(--nero); border-color: var(--nero); }
+
+/* la cornice nera col filo oro, come le insegne */
+.apertura__firma { width: 100%; max-width: 560px; justify-self: center; }
+.cornice { padding: 14px; border-radius: 4px; background: var(--nero); box-shadow: inset 0 0 0 5px var(--nero), inset 0 0 0 6.5px var(--oro), 0 30px 40px -26px rgba(0, 0, 0, .75); }
+.mescita { margin: 0; -webkit-user-select: none; user-select: none; }
+.mescita > svg { border-radius: 2px; }
+.mescita__didascalia { min-height: 3em; margin: 14px 6px 0; color: var(--chiaro); font-size: 1rem; line-height: 1.45; text-align: center; }
+.mescita__d { display: none; }
+.mescita[data-modo="0"] .mescita__d[data-m="0"], .mescita[data-modo="1"] .mescita__d[data-m="1"], .mescita[data-modo="2"] .mescita__d[data-m="2"] { display: inline; }
+.mescita__modi { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 10px; }
+.mescita__modi button { min-height: 44px; padding: 4px 18px 0; border: 1px solid var(--oro); border-radius: 22px; background: transparent; color: var(--chiaro); font: 600 1rem/1.1 var(--f-testo); cursor: pointer; }
+.mescita__modi button:hover { border-color: #FFFFFF; }
+.mescita__modi button[aria-pressed="true"] { background: var(--rosso); border-color: var(--rosso); color: #FFFFFF; }
+/* senza JS il vino non cambia: i bottoni restano nascosti col loro posto (#240) */
+.no-js .mescita__modi { visibility: hidden; }
+.apertura__nota { max-width: 34em; margin: 14px auto 0; font-size: 1rem; text-align: center; color: var(--chiaro); }
+
+/* ── i capitoli ── */
+.capitolo { padding: 68px max(var(--gutter), calc((100% - 1180px) / 2)) 64px; }
+.capitolo--crema { background: var(--crema); }
+.capitolo--pietra { background: var(--pietra); }
+.capitolo--damasco { background: var(--damasco) var(--damasco-trama); color: #FFFFFF; }
+.capitolo--blu { background: var(--blu) var(--blu-trama-img); color: #FFFFFF; }
+.etichetta { margin: 0 0 4px; font: 600 .9rem/1.3 var(--f-testo); letter-spacing: .18em; text-transform: uppercase; color: var(--oro-testo); }
+.capitolo--damasco .etichetta, .capitolo--blu .etichetta { color: var(--oro-chiaro); }
+.capitolo__titolo { max-width: 22em; margin: 6px 0 20px; font: 400 clamp(1.7rem, 1.15rem + 2vw, 2.6rem)/1.22 var(--f-titoli); color: var(--inchiostro); text-wrap: balance; }
+.capitolo--damasco .capitolo__titolo, .capitolo--blu .capitolo__titolo { color: #FFFFFF; }
+.capitolo__sotto { max-width: 44em; margin: 0 0 30px; font-size: 1.1rem; }
+figure { margin: 0; }
+figcaption { margin-top: 7px; font-size: .98rem; line-height: 1.4; color: var(--grigio); }
+.foto { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.foto img { display: block; width: 100%; height: auto; }
+
+/* il nome: il tavolino tondo e le loro parole */
+.storia { display: grid; gap: 30px; align-items: center; }
+.tondo { max-width: 420px; justify-self: center; text-align: center; }
+.tondo .foto { border-radius: 50%; box-shadow: 0 0 0 9px #B8BEC1, 0 0 0 11px #8E9498, 0 24px 30px -18px rgba(35, 26, 28, .6); }
+.tondo img { aspect-ratio: 1; object-fit: cover; object-position: 44% 50%; border-radius: 50%; }
+.tondo figcaption { margin-top: 20px; }
+.storia__parole p { max-width: 36em; margin: 0 0 14px; }
+.storia__capo { font: 400 1.22rem/1.55 var(--f-titoli); color: var(--damasco); }
+.storia__nota { font-size: 1rem; color: var(--grigio); }
+
+/* le quattro vetrine: il telaio nero, la tenda rossa, il vetro scuro con la scritta oro */
+.vetrine { display: grid; gap: 26px; }
+.vetrina { display: flex; flex-direction: column; background: var(--nero); border: 6px solid var(--nero); box-shadow: 0 0 0 1px var(--pietra-scura), 0 22px 28px -22px rgba(35, 26, 28, .7); }
+.vetrina__tenda { height: 38px; margin: -6px -6px 0; background: radial-gradient(circle at 12px 0, var(--damasco) 11px, transparent 12px) 0 26px / 24px 14px repeat-x, linear-gradient(var(--damasco-scuro) 0 4px, var(--damasco) 4px 26px, transparent 26px); }
+.vetrina__foto { position: relative; overflow: hidden; }
+.vetrina__foto img { aspect-ratio: 4 / 3; object-fit: cover; }
+.vetrina__foto::after { content: ''; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 0 55%, rgba(255, 255, 255, .12) 55% 62%, transparent 62%); pointer-events: none; }
+.vetrina__vetro { flex: 1; padding: 16px 18px 20px; color: var(--chiaro); border-top: 2px solid var(--oro); }
+.vetrina__nome { margin: 0 0 8px; font: 400 2.6rem/1.1 var(--f-nome); color: var(--oro-chiaro); }
+.vetrina__vetro p { margin: 0; font-size: 1.02rem; line-height: 1.58; }
+.vetrine__nota { max-width: 46em; margin: 28px 0 0; font-size: 1.04rem; }
+
+/* il locale, sul damasco */
+.sala { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.sala .foto { box-shadow: 0 0 0 1px rgba(230, 199, 126, .55); }
+.sala img { aspect-ratio: 4 / 5; object-fit: cover; }
+.sala__grande, .sala__largo { grid-column: span 2; }
+.sala__grande img, .sala__largo img { aspect-ratio: 4 / 3; }
+.capitolo--damasco figcaption { color: var(--chiaro); }
+
+/* dicono: i cartellini come etichette di vino, sul blu del soffitto */
+.capitolo--blu .voto__n { color: #FFFFFF; }
+.cartellini { columns: 1; column-gap: 22px; margin: 0; padding: 0; list-style: none; }
+.cartellino { position: relative; break-inside: avoid; margin: 0 0 22px; padding: 26px 24px 18px; border-radius: 3px; background: var(--crema); color: var(--inchiostro); box-shadow: inset 0 0 0 6px var(--crema), inset 0 0 0 7px var(--oro), 0 16px 24px -18px rgba(0, 0, 0, .8); }
+.cartellino::before { content: ''; position: absolute; left: 50%; top: 3px; width: 9px; height: 9px; background: var(--oro); transform: translateX(-50%) rotate(45deg); }
+.cartellino__testo { margin: 0; font-size: 1.04rem; line-height: 1.58; }
+.cartellino__chi { margin: 10px 0 0; font-size: .96rem; line-height: 1.4; color: var(--grigio); }
+.cartellino__chi b { display: block; color: var(--damasco); }
+.dicono__nota { max-width: 48em; margin: 8px 0 0; font-size: 1rem; }
+.dicono__nota a { color: var(--oro-chiaro); font-weight: 700; }
+
+/* orari: l'insegna nera col filo bianco */
+.insegna { max-width: 760px; padding: 26px 26px 22px; border-radius: 3px; background: var(--nero); color: var(--chiaro); box-shadow: inset 0 0 0 6px var(--nero), inset 0 0 0 7.5px #F2EDE6, 0 24px 30px -24px rgba(35, 26, 28, .8); }
+.stato--insegna { display: flex; margin: 0 0 14px; color: #FFFFFF; }
+.insegna__giorni { display: grid; gap: 2px 34px; }
+.giorno { display: flex; align-items: baseline; gap: 10px; min-width: 0; padding: 8px 8px 6px; border-bottom: 1px dotted rgba(201, 164, 86, .45); }
+.giorno__nome { font: 400 1.08rem/1.4 var(--f-titoli); color: #FFFFFF; }
+.giorno__ore { margin-left: auto; font-weight: 600; color: var(--oro-chiaro); white-space: nowrap; }
+.giorno--chiuso .giorno__ore { color: var(--rosso-chiaro); }
+.giorno.is-today { border-radius: 3px; background: var(--damasco); border-bottom-color: transparent; }
+.giorno.is-today .giorno__ore { color: #FFFFFF; }
+.orari__nota { margin: 14px 0 34px; font-size: 1rem; color: var(--grigio); }
+
+/* dove */
+.dove { display: grid; gap: 30px; align-items: start; }
+.dove__loro { margin: 0 0 14px; font: 400 1.26rem/1.4 var(--f-titoli); color: var(--damasco); }
+.cartina { overflow: hidden; border-radius: 3px; box-shadow: 0 0 0 6px var(--nero), 0 0 0 7.5px var(--oro); }
+.cartina iframe { display: block; width: 100%; height: 320px; border: 0; }
+.indirizzo { margin: 0 0 18px; }
+.indirizzo div { display: grid; grid-template-columns: 7.4em minmax(0, 1fr); gap: 10px; padding: 8px 0 6px; border-bottom: 1px solid var(--crema-2); }
+.indirizzo dt { font: 600 .84rem/2 var(--f-testo); letter-spacing: .12em; text-transform: uppercase; color: var(--oro-testo); }
+.indirizzo dd { margin: 0; overflow-wrap: anywhere; }
+.dove__azioni { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; }
+
+/* ── la chiusura: di nuovo l'insegna ── */
+.piede { background: var(--nero); color: var(--chiaro); box-shadow: inset 0 2px 0 var(--oro); }
+.piede__dentro { max-width: 900px; margin: 0 auto; padding: 46px var(--gutter) 100px; text-align: center; }
+.piede__marchio { margin: 0 0 4px; }
+.piede__riga { margin: 0 0 18px; font: 400 1rem/1.3 var(--f-titoli); color: var(--oro-chiaro); }
+.piede__dove, .piede__orario, .piede__social { margin: 0 0 8px; }
+.piede a { color: #FFFFFF; }
+.piede__cred { max-width: 54em; margin: 18px auto 10px; font-size: .96rem; color: #D8CBC4; }
+.piede__su { font-weight: 700; }
+
+/* ── reveal (plumbing) ── */
+.js .reveal { opacity: 0; }
+.js .reveal.in-view { opacity: 1; }
+html:not(.js) .reveal { opacity: 1; }
+.reduced-motion .reveal { opacity: 1 !important; }
+
+/* ── la barra e la lightbox ── */
+.action-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: grid; grid-template-columns: 1fr 1fr; background: var(--nero); box-shadow: 0 -2px 0 var(--oro); transform: translateY(110%); transition: transform .25s; }
+.action-bar.is-visible { transform: translateY(0); }
+.action-bar a { display: flex; align-items: center; justify-content: center; min-height: 54px; padding-top: 3px; color: #fff; font: 700 1.04rem var(--f-testo); text-decoration: none; }
+.action-bar a:first-child { background: var(--rosso); }
+#lightbox { position: fixed; inset: 0; z-index: 90; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(21, 18, 19, .95); }
+#lightbox[hidden] { display: none !important; }
+#lightbox img { width: auto; max-width: min(1400px, 100%); max-height: 88vh; }
+#lightboxClose { position: absolute; top: 14px; right: 16px; width: 48px; height: 48px; border: 1px solid rgba(255, 255, 255, .6); border-radius: 50%; background: transparent; color: #fff; font-size: 32px; line-height: 1; cursor: pointer; }
+
+/* ── le larghezze ── */
+@media (max-width: 379px) {
+  .testata__dentro { gap: 6px; }
+  .lingue button { min-width: 31px; }
+  .marchio { gap: 5px; }
+  .marchio__dito { font-size: 2.15rem; }
+  .marchio__divino { font-size: 1.22rem; letter-spacing: .02em; }
+  .stato { font-size: .96rem; }
+  .mescita__modi button { padding: 4px 13px 0; }
+  .bottone { padding: 4px 16px 0; }
+  .cornice { padding: 10px; }
+  .insegna { padding: 20px 16px 16px; }
+  .vetrina__vetro { padding: 14px 14px 18px; }
+}
+@media (min-width: 560px) {
+  .chiama { display: inline-flex; }
+}
+@media (min-width: 760px) {
+  .action-bar { display: none; }
+  .piede__dentro { padding-bottom: 50px; }
+  .vetrine { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cartellini { columns: 2; }
+  .insegna__giorni { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-flow: row; }
+  .dove { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+  .storia { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 50px; }
+}
+@media (min-width: 960px) {
+  .apertura { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 52px; }
+  .sala { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  /* la foto grande riempie le due righe senza dettarne l'altezza; la didascalia sotto, dentro la cella */
+  .sala__grande { grid-row: span 2; display: flex; flex-direction: column; }
+  .sala__grande .foto { position: relative; flex: 1; min-height: 260px; }
+  .sala__grande img { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; }
+  .sala__largo img { aspect-ratio: 16 / 9; }
+}
+@media (min-width: 1060px) {
+  .testata__dentro { gap: 16px; }
+  .voci { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-left: 26px; }
+  .voci a { padding: 5px 1px 2px; color: var(--chiaro); font: 600 1rem var(--f-testo); text-decoration: none; }
+  .voci a:hover, .voci a[aria-current="true"] { color: #FFFFFF; text-decoration: underline; text-decoration-color: var(--oro); text-decoration-thickness: 2px; text-underline-offset: 7px; }
+  .burger { display: none; }
+  .cartellini { columns: 3; }
+}
+@media (min-width: 1140px) {
+  .vetrine { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+  .vetrina__foto img { aspect-ratio: 4 / 5; }
+}
+
+/*DITO*/
+/* un dito di vino — generato da _ddv_firma.mjs: non modificare a mano */
+.dito__svg { display: block; width: 100%; height: auto; overflow: hidden; background: #7A1427; }
+.parete { fill: url(#ddv-damasco); }
+.soffitto { fill: #1E2B4D; } .soffitto__trama { fill: none; stroke: #2A3A63; stroke-width: 2; } .soffitto__cornice { fill: #C9A456; }
+.lampada__alone { fill: url(#ddv-alone); } .lampada__catena { fill: none; stroke: #2B2020; stroke-width: 2; } .lampada__coppa { fill: #F0A43A; } .lampada__orlo { fill: #F7C874; }
+.tavolo__gamba { fill: #5E6468; } .tavolo__ombra { fill: #2A0710; fill-opacity: .45; } .tavolo__bordo { fill: #6F7478; }
+.tavolo__piano { fill: url(#ddv-metallo); } .tavolo__filo { fill: none; stroke: #D6DADD; stroke-width: 1.4; stroke-opacity: .7; }
+.tavolo__inciso { font: 400 44px/1 'Engagement', 'Brush Script MT', cursive; fill: #464B4F; }
+.calice__ombra { fill: #3A3F42; fill-opacity: .35; }
+.calice__vetro { fill: rgba(255, 255, 255, .16); stroke: #F4EDEA; stroke-width: 2; stroke-opacity: .8; }
+.calice__orlo { fill: none; stroke: #FFFFFF; stroke-width: 2; stroke-opacity: .85; }
+.calice__gambo { fill: none; stroke: #EEE6E2; stroke-width: 5; stroke-linecap: round; stroke-opacity: .85; } .calice__piede { fill: rgba(255, 255, 255, .25); stroke: #F4EDEA; stroke-width: 1.6; }
+.bolle { fill: #FFFBEA; fill-opacity: .9; }
+.riflesso__luce { fill: none; stroke: #FFFFFF; stroke-width: 3.2; stroke-linecap: round; stroke-opacity: .7; }
+.filo { fill: none; stroke-width: 4.5; stroke-linecap: butt; }
+.bottiglia__vetro { fill: url(#ddv-verde); } .bottiglia__capsula { fill: #6E0E22; } .bottiglia__etichetta { fill: #EFE4CF; } .bottiglia__fascia { fill: #B3202F; }
+.bottiglia__luce { fill: none; stroke: #6FA386; stroke-width: 3; stroke-linecap: round; stroke-opacity: .45; }
+.mano__pugno, .mano__dito { fill: url(#ddv-pelle); stroke: #B97C5C; stroke-width: 1.2; } .mano__unghia { fill: #F4D6C6; stroke: #D9A78C; stroke-width: 1; }
+.mano__pieghe { fill: none; stroke: #B97C5C; stroke-width: 1.6; stroke-linecap: round; stroke-opacity: .8; }
+.mescita[data-modo="0"] .vino { fill: #5A0A1C; } .mescita[data-modo="0"] .vino__pelo { fill: #B8324E; } .mescita[data-modo="0"] .filo { stroke: #9E1A36; }
+.mescita[data-modo="1"] .vino { fill: #E6CF7A; } .mescita[data-modo="1"] .vino__pelo { fill: #FFF1C2; } .mescita[data-modo="1"] .filo { stroke: #EBD68A; }
+.mescita[data-modo="2"] .vino { fill: #EFD98E; } .mescita[data-modo="2"] .vino__pelo { fill: #FFF6D6; } .mescita[data-modo="2"] .filo { stroke: #F3E1A0; }
+.mescita[data-modo="0"] .modo:not([data-m="0"]) { display: none; }
+.mescita[data-modo="1"] .modo:not([data-m="1"]) { display: none; }
+.mescita[data-modo="2"] .modo:not([data-m="2"]) { display: none; }
+.firma-attesa .livello { transform: translate(0px, 40px); }
+.firma-attesa .filo { stroke-dasharray: 0 2; stroke-dashoffset: 0; }
+.firma-attesa .riflesso { opacity: 0; }
+/*/DITO*/
