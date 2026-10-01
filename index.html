@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
 <script>(function(){var r=document.documentElement;r.classList.remove('no-js');
 /* la firma: finché main.js non parte c'è il calice vuoto; se il codice non arriva, dopo 2,5 s il dito di vino versato */
 try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('firma-attesa');window.__attesaDito=setTimeout(function(){r.classList.remove('firma-attesa')},2500)}}catch(e){}})()</script>
@@ -20,15 +21,55 @@ try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add(
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Engagement&amp;family=Quando&amp;family=Hind+Guntur:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css?v=1">
 <link rel="stylesheet" href="css/styles.css?v=1">
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
 <script src="js/main.js?v=1" defer></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BarOrPub","name":"Dito Divino","description":"Wine bar e caffetteria in Via Gaetano Negri 8 a Milano, a due passi da Piazza Affari: colazione con le torte fatte in casa, pranzo col menu del giorno, aperitivo coi vini italiani, eventi privati.","url":"https://rotenzark.github.io/dito-divino/","image":"https://rotenzark.github.io/dito-divino/img/og.jpg","telephone":"+39 02 8909 6532","email":"ditodivino@live.it","servesCuisine":"Italiana","address":{"@type":"PostalAddress","streetAddress":"Via Gaetano Negri 8","postalCode":"20123","addressLocality":"Milano","addressRegion":"MI","addressCountry":"IT"},"geo":{"@type":"GeoCoordinates","latitude":45.465218,"longitude":9.184031},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Sunday"],"opens":"09:00","closes":"17:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.4","reviewCount":"147","bestRating":"5"},"sameAs":["https://www.instagram.com/ditodivino/","https://www.facebook.com/ditodivinomilano/"]}
+{
+  "@context": "https://schema.org",
+  "@type": "BarOrPub",
+  "name": "Dito Divino",
+  "description": "Wine bar e caffetteria in Via Gaetano Negri 8 a Milano, a due passi da Piazza Affari: colazione con le torte fatte in casa, pranzo col menu del giorno, aperitivo coi vini italiani, eventi privati.",
+  "url": "https://rotenzark.github.io/dito-divino/",
+  "image": "https://rotenzark.github.io/dito-divino/img/og.jpg",
+  "telephone": "+39 02 8909 6532",
+  "email": "ditodivino@live.it",
+  "servesCuisine": "Italiana",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Gaetano Negri 8",
+    "postalCode": "20123",
+    "addressLocality": "Milano",
+    "addressRegion": "MI",
+    "addressCountry": "IT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 45.465218,
+    "longitude": 9.184031
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Sunday"
+      ],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/ditodivino/",
+    "https://www.facebook.com/ditodivinomilano/"
+  ]
+}
 </script>
 </head>
 <body>
@@ -212,12 +253,12 @@ try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add(
     <h2 id="diconoT" class="capitolo__titolo" data-i18n="d.titolo">Chi passa, e chi torna ogni mattina</h2>
     <p class="voto voto--sezione"><b class="voto__n">4,4</b> <span class="voto__su" data-i18n="d.google">su Google, 147 recensioni</span></p>
     <ul class="cartellini">
-      <li class="cartellino reveal"><p class="cartellino__testo">«When Bar nel cuore di Milano in Piazza Affari via negri sono passata perché lavoro qua vicino in questo piccola bomboniera rossa per un aperitivo e mi sono ritrovata in Oasi di pace e tranquillità»</p><p class="cartellino__chi"><b>Sabrina Fontana</b> <span data-i18n="d.g4m">Google, 4 mesi fa</span></p></li>
-      <li class="cartellino reveal"><p class="cartellino__testo">«Vengo in questo bar ogni mattina prima di andare in ufficio. Il caffe molto buono e ha un prezzo onesto […]. Come se non bastasse i ragazzi al bancone […] sono super professionali e ti tengono compagnia. Un toccasana per iniziare la giornata lavorativa con il piede giusto.BRAVI!»</p><p class="cartellino__chi"><b>Luca Paolo Melis</b> <span data-i18n="d.g11m">Google, 11 mesi fa</span></p></li>
-      <li class="cartellino reveal"><p class="cartellino__testo">«Un posto bello, caratteristico nel centro di Milano. A due passi dal duomo, ottime pietanze e locale polivalente per aperitivi, feste private e molto altro.»</p><p class="cartellino__chi"><b>Silvio j Biasio</b> <span data-i18n="d.g4m">Google, 4 mesi fa</span></p></li>
-      <li class="cartellino reveal"><p class="cartellino__testo">«Personale super cortese e posto molto carino, ho fatto una buonissima colazione e mangiato "divinamente" […] Da non perdere»</p><p class="cartellino__chi"><b>Joan Riccio</b> <span data-i18n="d.g7m">Google, 7 mesi fa</span></p></li>
-      <li class="cartellino reveal"><p class="cartellino__testo">«Ampia rassegna di bottiglie, ottime proposte per pranzo ed aperitivo. Locale elegante ed accogliente, personale molto attento, titolare gentilissima.»</p><p class="cartellino__chi"><b>Nicoletta Pol “Nym”</b> <span data-i18n="d.g3a">Google, 3 anni fa</span></p></li>
-      <li class="cartellino reveal"><p class="cartellino__testo">«Locale elegante, affascinante ed accogliente nel cuore di Milano. Bella gente e bella atmosfera tra luci soffuse e musica di sottofondo. Cibo ottimo ed abbondante. Cantina raffinata e molto fornita. Personale cordiale, gentile e disponibile. […]»</p><p class="cartellino__chi"><b>manuela sanzo</b> <span data-i18n="d.g8a">Google, 8 anni fa</span></p></li>
+      <li class="cartellino reveal"><p lang="it" class="cartellino__testo">«When Bar nel cuore di Milano in Piazza Affari via negri sono passata perché lavoro qua vicino in questo piccola bomboniera rossa per un aperitivo e mi sono ritrovata in Oasi di pace e tranquillità»</p><p class="cartellino__chi"><b>Sabrina Fontana</b> <span data-i18n="d.g4m">Google, 4 mesi fa</span></p></li>
+      <li class="cartellino reveal"><p lang="it" class="cartellino__testo">«Vengo in questo bar ogni mattina prima di andare in ufficio. Il caffe molto buono e ha un prezzo onesto […]. Come se non bastasse i ragazzi al bancone […] sono super professionali e ti tengono compagnia. Un toccasana per iniziare la giornata lavorativa con il piede giusto.BRAVI!»</p><p class="cartellino__chi"><b>Luca Paolo Melis</b> <span data-i18n="d.g11m">Google, 11 mesi fa</span></p></li>
+      <li class="cartellino reveal"><p lang="it" class="cartellino__testo">«Un posto bello, caratteristico nel centro di Milano. A due passi dal duomo, ottime pietanze e locale polivalente per aperitivi, feste private e molto altro.»</p><p class="cartellino__chi"><b>Silvio j Biasio</b> <span data-i18n="d.g4m">Google, 4 mesi fa</span></p></li>
+      <li class="cartellino reveal"><p lang="it" class="cartellino__testo">«Personale super cortese e posto molto carino, ho fatto una buonissima colazione e mangiato "divinamente" […] Da non perdere»</p><p class="cartellino__chi"><b>Joan Riccio</b> <span data-i18n="d.g7m">Google, 7 mesi fa</span></p></li>
+      <li class="cartellino reveal"><p lang="it" class="cartellino__testo">«Ampia rassegna di bottiglie, ottime proposte per pranzo ed aperitivo. Locale elegante ed accogliente, personale molto attento, titolare gentilissima.»</p><p class="cartellino__chi"><b>Nicoletta Pol “Nym”</b> <span data-i18n="d.g3a">Google, 3 anni fa</span></p></li>
+      <li class="cartellino reveal"><p lang="it" class="cartellino__testo">«Locale elegante, affascinante ed accogliente nel cuore di Milano. Bella gente e bella atmosfera tra luci soffuse e musica di sottofondo. Cibo ottimo ed abbondante. Cantina raffinata e molto fornita. Personale cordiale, gentile e disponibile. […]»</p><p class="cartellino__chi"><b>manuela sanzo</b> <span data-i18n="d.g8a">Google, 8 anni fa</span></p></li>
     </ul>
     <p class="dicono__nota"><span data-i18n="d.nota">Dalle recensioni su Google, come sono state scritte; […] dove abbiamo tagliato. La frase in alto è di una guida, Vivimilano.</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Dito+Divino%2C+Via+Gaetano+Negri+8%2C+20123+Milano" target="_blank" rel="noopener" data-i18n="d.tutte">Tutte le recensioni su Google</a></p>
   </section>
@@ -241,7 +282,7 @@ try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add(
     <p class="orari__nota" data-i18n="o.nota">Orari dalla nostra scheda Google (settembre 2026). Per l'aperitivo, le cene e le feste della sera chiamateci.</p>
     <div class="dove" id="dove">
       <div class="cartina reveal">
-        <iframe title="Mappa: Dito Divino, Via Gaetano Negri 8, Milano" data-i18n-title="w.mappa" src="https://maps.google.com/maps?q=Dito%20Divino%2C%20Via%20Gaetano%20Negri%208%2C%2020123%20Milano&amp;z=16&amp;output=embed" width="600" height="400" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="mappa-clic" data-mappa-clic style="--mappa-h: 400px"><template><iframe title="Mappa: Dito Divino, Via Gaetano Negri 8, Milano" data-i18n-title="w.mappa" src="https://maps.google.com/maps?q=Dito%20Divino%2C%20Via%20Gaetano%20Negri%208%2C%2020123%20Milano&amp;z=16&amp;output=embed" width="600" height="400" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></template><div class="mappa-clic__velo"><a class="mappa-clic__btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=Dito+Divino%2C+Via+Gaetano+Negri+8%2C+20123+Milano" target="_blank" rel="noopener">Mostra la mappa</a><p class="mappa-clic__nota">La mappa è di Google: aprendola, Google riceve il tuo indirizzo IP e può usare i suoi cookie.</p></div></div>
       </div>
       <div>
         <p class="dove__loro" data-i18n="w.loro">«Un luogo unico nel cuore di Milano, a pochi passi da Piazza Affari»</p>
@@ -266,7 +307,7 @@ try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add(
     <p class="piede__dove">Via Gaetano Negri 8, 20123 Milano · <a href="tel:+390289096532" class="intero">02 8909 6532</a></p>
     <p class="piede__orario" data-i18n="f2.orario">Dalle 9 alle 17, il sabato chiuso</p>
     <p class="piede__social"><a href="https://www.instagram.com/ditodivino/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/ditodivinomilano/" target="_blank" rel="noopener">Facebook</a></p>
-    <p class="piede__cred" data-i18n="f2.cred">Sito dimostrativo realizzato da <a href="https://bespokestud.io" rel="noopener">Bespoke Studio</a> · orari, voto e recensioni dalla loro scheda Google (settembre 2026); le loro parole dal loro sito; le foto dal loro sito, da Facebook e dalla loro scheda Google, quella del bancone da una recensione su Google; la frase in alto da Vivimilano. Il dito di vino l'abbiamo disegnato noi.</p>
+    <p class="piede__cred" data-i18n="f2.cred">Sito dimostrativo realizzato da <a href="https://bespokestud.io" rel="noopener">Bespoke Studio</a> · <a href="privacy.html">Privacy</a> · orari, voto e recensioni dalla loro scheda Google (settembre 2026); le loro parole dal loro sito; le foto dal loro sito, da Facebook e dalla loro scheda Google, quella del bancone da una recensione su Google; la frase in alto da Vivimilano. Il dito di vino l'abbiamo disegnato noi.</p>
     <p><a class="piede__su" href="#inizio" data-i18n="f2.su">Torna su ↑</a></p>
   </div>
 </footer>
@@ -281,5 +322,6 @@ try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add(
   <img id="lightboxImg" src="" alt="">
 </div>
 
+<script src="js/mappa-clic.js?v=1" defer></script>
 </body>
 </html>
